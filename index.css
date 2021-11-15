@@ -1,22 +1,27 @@
 body {
   font-family: Roboto;
   margin: 0px;
-}
-
-#main {
   display: flex;
+  flex-direction: row;
 }
 
 #content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem 4rem 0px 4rem;
 }
 
 #sidebar {
   background-color: black;
   color: white;
+  min-height: 100vh;
+  width: 10%;
+}
+
+#main {
+  width: 90%;
 }
 
 ul {
@@ -37,15 +42,31 @@ background-color: #5C5C5C;
 #banner {
   background: #EFEFEF;
   text-align: center;
+  padding: 1rem;
+}
+
+#footer {
+  width: 100%;
+  border-top: 2px solid #EFEFEF;;
+}
+
+.banner-header {
+  font-size: 18px;
+}
+
+.banner-text {
+  width: 60%;
+  margin: auto;
 }
 
 .logo {
   width: 310px;
   height: 122px;
+  margin: 1rem;
 }
 
 .copy-right {
-  position: absolute;
+  padding-left: 1rem;
   width: 125px;
   height: 19px;
   font-family: Roboto;
@@ -60,25 +81,44 @@ background-color: #5C5C5C;
   margin-top: 1.5rem;
 }
 
-.col-side {
-  width: 20%;
-  margin-bottom: 1rem;
-}
-
-.col-content {
-  width: 80%;
-  margin-bottom: 1rem;
-}
-
 .col {
   width: 33%;
+  padding-left: 1rem;
   margin-bottom: 1rem;
+}
+
+.col:first-child {
+  padding-left: 0px;
+}
+
+.col-text {
+  margin-top: 0px;
+  word-wrap: break-word;
+}
+
+.icon {
+  float: left;
 }
 
 @media screen and (max-width: 576px) {
-  .col, .col-side, .col-content {
-    width: 100%;
+  body, .row {
+    flex-direction: column;
   }
+  .col, #sidebar, #main {
+    width: 100%;
+    padding-left: 0px;
+  }
+  #sidebar, #content {
+    min-height: unset;
+  }
+  .banner-text {
+    width: 100%;
+    margin: auto;
+  }
+  #content {
+    padding: 1rem
+  }
+  
 }
 @media screen and (max-width: 920px) {
   
